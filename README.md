@@ -7,7 +7,6 @@ Site fictício que simula uma e-commerce que vende chás.
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
-- ``Spring Boot ``
 - ``Java ``
 - ``Paradigma de orientação a objetos``
 - ``InteliJ IDEA``
