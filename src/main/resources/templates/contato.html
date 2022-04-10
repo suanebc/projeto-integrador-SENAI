@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- CSS only -->
+   
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link href="css/myStyle.css" rel="stylesheet">
+      
+
+   <title> | Nobre Chá - Contato | </title>
+
+</head>
+
+<body id="conteudo-total" class="conteudo">
+<!-- ********************************************** NAVBAR ********************************************************* -->
+   <header class="hero">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+           <div class="container">
+               <a class="navbar-brand" href="/"><img class="myImg" src="logotipo.svg" alt="logotipo da marca"></a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+
+               <div class="collapse navbar-collapse" id="navbarsExample07">
+                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                       <li class="nav-item">
+                           <a class="nav-link" href="/404">Nobre Nós</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" th:href="${(#mvc.url('PC#listarProduto')).build()}">Produtos</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" th:href="${(#mvc.url('HC#contato')).build()}">Contatos</a>
+                       </li>
+                   </ul>
+                   <form action="/busca" method="post">
+                       <div class="input-group mb-3">
+                           <input type="search" id="buscar" name="buscar" class="form-control" placeholder="Pesquisar por ..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                           <button class="btn btn-outline-secondary" type="submit" id="button-addon2" value="todos">pesquisar</button>
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </nav>
+   </header>
+<!-- *************************************************** HERO ****************************************************** -->
+   <main class="conteudo_diverso estilo_cadastro">
+      <form>
+
+         <fieldset>
+            <legend class="formulario__legenda">Informações básicas</legend>
+            <div class="input-container">
+                <input name="nome" id="nome" class="input" type="text" placeholder="Nome" data-tipo="nome" required>
+                <label class="input-label" for="nome">Nome</label>
+                <span class="input-mensagem-erro">Este campo não está válido</span>
+            </div>
+            <div class="input-container">
+                <input name="email" id="email" class="input" type="email" placeholder="Email" data-tipo="email" required>
+                <label class="input-label" for="email">Email</label>
+                <span class="input-mensagem-erro">Este campo não está válido</span>
+            </div>
+<!--            <div class="input-container">-->
+<!--                <input name="senha" id="senha" class="input" type="password" placeholder="Senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$" title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos." data-tipo="senha">-->
+<!--                <label class="input-label" for="senha">Senha</label>-->
+<!--                <span class="input-mensagem-erro">Este campo não está válido</span>-->
+<!--            </div>-->
+        </fieldset>
+   
+        <fieldset>
+            <legend class="formulario__legenda">Informações pessoais</legend>
+            <div class="input-container">
+                <input name="nascimento" onblur="menorDeIdade(this.value);" id="nascimento" class="input" type="date" placeholder="Data de nascimento" data-tipo="dataNascimento" required>
+                <label class="input-label" for="nascimento">Data de nascimento</label>
+                <span class="input-mensagem-erro">Este campo não está válido</span>
+            </div>
+            <div class="input-container">
+               <input name="cpf" id="cpf" class="input" type="text" placeholder="CPF" data-tipo="cpf" required>
+               <label class="input-label" for="cpf">CPF</label>
+               <span class="input-mensagem-erro">Este campo não está válido</span>
+           </div>
+        </fieldset>
+   
+        <fieldset>
+           <legend class="formulario__legenda">Informações para Contato</legend>
+           <div class="input-container">
+               <input name="telefone" id="telefone" class="input" type="text" placeholder="Telefone" data-tipo="telefone">
+               <label class="input-label" for="telefone">Telefone</label>
+               <span class="input-mensagem-erro">Este campo não está válido</span>
+           </div>
+           <div class="input-container">
+              <input name="celular" id="celular" class="input" type="text" placeholder="celular" data-tipo="telefone">
+              <label class="input-label" for="telefone">Celular</label>
+              <span class="input-mensagem-erro">Este campo não está válido</span>
+          </div>
+        </fieldset>
+   
+        <fieldset>
+            <legend class="formulario__legenda">Endereço</legend>
+            <div class="input-container">
+                <input name="cep" id="cep" class="input" type="text" placeholder="CEP" maxlength="9" pattern="[\d]{5}-?[\d]{3}" data-tipo="cep" required>
+                <label class="input-label" for="cep">CEP</label>
+                <span class="input-mensagem-erro">Este campo não está válido</span>
+            </div>
+            <div class="input-container">
+               <input name="numero" id="numero" class="input" type="number" placeholder="Número" data-tipo="numero" >
+               <label class="input-label" for="numero">Número</label>
+               <span class="input-mensagem-erro">Este campo não está válido</span>
+           </div>
+            <div class="input-container">
+                <input name="infor_adicional" id="infor_adicional" class="input" type="text" placeholder="Complemento" data-tipo="infor_adicional" >
+                <label class="input-label" for="infor_adicional">Complemento</label>
+                <span class="input-mensagem-erro">Este campo não está válido</span>
+            </div>
+            <div class="input-container">
+               <input name="logradouro" id="logradouro" class="input" type="text" placeholder="Logradouro" data-tipo="logradouro" required>
+               <label class="input-label" for="logradouro">Logradouro</label>
+               <span class="input-mensagem-erro">Este campo não está válido</span>
+           </div>
+           <div class="input-container">
+               <input name="bairro" id="bairro" class="input" type="text" placeholder="Bairro" data-tipo="bairro" required>
+               <label class="input-label" for="bairro">Bairro</label>
+               <span class="input-mensagem-erro">Este campo não está válido</span>
+           </div>
+            <div class="input-container">
+                <input name="localidade" id="localidade" class="input" type="text" placeholder="Cidade" data-tipo="localidade" required>
+                <label class="input-label" for="localidade">Cidade</label>
+                <span class="input-mensagem-erro">Este campo não está válido</span>
+            </div>
+            <div class="input-container">
+                <input name="uf" id="uf" class="input" type="text" placeholder="Estado" data-tipo="uf" required>
+                <label class="input-label" for="uf">Estado</label>
+                <span class="input-mensagem-erro">Este campo não está válido</span>
+            </div>
+        </fieldset>
+   
+        <button class="btn btn-sm btn-outline-secondary" onclick="verify_form(event)">Cadastrar >></a>
+      </form>
+   </main>
+
+<!-- ***************************************************** EMAIL *************************************************** -->
+   <br><br>
+   <div class="text-center border-bottom container-fluid">
+      <h2>Cadastre seu e-mail e receba as nossas novidades de maneira fácil e rápida!</h2>
+      <div class="input-group mb-3">
+         <input type="text" class="form-control" placeholder="Seu e-mail ..." aria-label="Username"
+            aria-describedby="basic-addon1">
+         <span class="input-group-text" id="basic-addon1"><img class="conteudo_email__img" src="email-icone.png" alt="enviar"></span>
+      </div>
+   </div>
+
+<!-- ********************************************* FOOTER ********************************************************** -->
+   <footer class="text-muted py-5">
+
+      <div class="container">
+         <div class="row">
+            <div class="col">
+               <div class="">
+                  <a href="/" class="navbar-brand d-flex align-items-center"><img class="mb-1" src="logotipo-p.svg" alt="logotipo"></a>
+                  
+                  <p> Chá Nobre possui envio para todo o Brasil.
+                     Oferecemos o chá tradiconal , os modernos chás
+                     gelados com o maximo de
+                     sabor extraido da natureza.</p>
+               </div>
+            </div>
+            <div class="col">
+               <div class="container">
+                  <h4>Produto</h4>
+                  <ul class="list-group list-group-flush">
+                     <li class="list-group-item">Chá em sachê</li>
+                     <li class="list-group-item">Chá Gelado</li>
+                     <li class="list-group-item">Cápsulas</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col">
+               <div class="container">
+                  <h4>Atendimento</h4>
+                  <ul class="list-group list-group-flush">
+                     <li class="list-group-item">Como Comprar</li>
+                     <li class="list-group-item">Fale Conosco</li>
+                     <li class="list-group-item">Privacidade</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col">
+               <div class="container">
+                  <h4>Segurança</h4>
+                  <ul class="list-group list-group-flush">
+                     <li class="list-group-item">Formas de Pagamento</li>
+                     <li class="list-group-item">Prazos de entrega</li>
+                     <li class="list-group-item">Política de Segurança</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col">
+               <div>
+                  <img src="instagram.svg" alt="Instagram">
+                  <img src="twitter.svg" alt="Twitter">
+                  <img src="facebook.svg" alt="Facebook">
+                  <ul class="list-group list-group-flush">
+                     <li class="list-group-item">Atendimento : 0800-001-001-001</li>
+                     <li class="list-group-item">faleconosco@chanobre.com.br</li>
+                     <li class="list-group-item">Vendas exclusivas pela internet</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </footer>
+
+   <!-- JavaScript Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   <!-- <script src="/_js/app.js" type="script"></script> -->
+   <script src="js/validar.js"></script>
+
+</body>
+
+</html>
