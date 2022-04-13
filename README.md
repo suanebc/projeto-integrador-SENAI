@@ -1,20 +1,30 @@
-![logotipo](https://user-images.githubusercontent.com/60412898/163083986-39ead53d-6dac-437b-9441-1d1534c79cb3.png)
-## Front-end para Agencia de Turismo
-Projeto realizado no Curso de Técnico em Informática para Internet do SENAI.
+![logotipo](https://user-images.githubusercontent.com/60412898/162620878-6eedc6f0-f4a3-4597-8254-47d295b14485.svg)
+## Loja Virtual de Chás
+Projeto realizado no Curso de Técnico em Informática para Internet do SENAI, com objetivo é a articulação das capacidades adquiridas no curso para aprimoramento das competências do perfil profissional.
 
 ## Tema
-Site fictício que simula uma agencia de turismo.
+Site fictício que simula uma e-commerce que vende chás.
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
-- ``Javascript ``
-- ``VSCode``
+- ``Java ``
+- ``Paradigma de orientação a objetos``
+- ``InteliJ IDEA``
+- ``Spring Boot``
+- ``Thymeleaf``
+- ``Javascript``
 - ``HTML``
 - ``CSS``
-- ``Figma``
-- ``Gimp``
+- ``H2``
+- ``Bootstrap``
 
 
+## :hammer: Funcionalidades do projeto
+
+- `Funcionalidade 1`: Lista os produtos
+- `Funcionalidade 2`: Busca por um produto
+- `Funcionalidade 3`: Exibe os detalhes de um produto 
+- `Funcionalidade 4`: Valida um formúlario
 
 ## 📁 Acesso ao projeto
-https://agenciadeviagensluna.netlify.app/index.html
+https://app-projeto-integrador-suane.herokuapp.com/
