@@ -27,7 +27,7 @@ Site fictício que simula uma e-commerce que vende chás.
 - `Funcionalidade 4`: Valida um formúlario
 
 ## 📁 Acesso ao projeto
-https://app-projeto-integrador-suane.herokuapp.com/
+//https://app-projeto-integrador-suane.herokuapp.com/ 
 
 ![tela-nobre-cha](https://user-images.githubusercontent.com/60412898/176910377-eef4d526-0bab-4c6f-bec2-425f22dea01d.png)
 
